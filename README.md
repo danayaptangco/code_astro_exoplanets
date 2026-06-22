@@ -1,2 +1,2 @@
 # code_astro_exoplanets
-Practice for developing package at Code Astro Workshop
+Python package that simulates an exoplanet transit animation and mock light curve given user input about a given planet. 
