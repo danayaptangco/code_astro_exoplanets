@@ -44,10 +44,11 @@ class Star:
         mass (float): star mass. It's passed in jupiter radii units but it's converted and stored in SI units. 
     '''
 
-    def __init__(self, radius, mass):
+    def __init__(self, radius, mass, stype):
         c = Constants()
         self.radius = radius * c.r_sun
         self.mass = mass * c.m_sun
+        self.stype = stype
 
 class Transit:
     '''
@@ -64,6 +65,7 @@ class Transit:
         self.planet_orbital_period = planet.orbital_period #s
         self.planet_x = planet.x  # current planet x position
         self.front = True  # is planet in front of star?
+        self.stype = star.stype
 
         self.star_mass = star.mass #kg 
 
@@ -130,7 +132,8 @@ class Transit:
             None
         '''
         # planet and star radii need to be on the same scale so that they will plot right. 
-        star_circle=plt.Circle((0,0),self.star_radius/c.r_sun, color='yellow', alpha=1)
+        colors = {'o':'steelblue', 'b':'lightblue', 'a':'beige', 'f':'lightyellow', 'g':'gold', 'k':'sandybrown', 'm':'indianred' } 
+        star_circle=plt.Circle((0,0),self.star_radius/c.r_sun, color=colors[self.stype.lower()], alpha=1)
         planet_circle = plt.Circle((x,0),
                 self.planet_radius/c.r_sun,
                 color='blue',
@@ -187,11 +190,12 @@ class Transit:
         ax1.set_box_aspect(1)
         ax1.set_xlim(0, self.planet_orbital_period/c.days2sec)
 
+        colors = {'o':'steelblue', 'b':'lightblue', 'a':'beige', 'f':'lightyellow', 'g':'gold', 'k':'sandybrown', 'm':'indianred' }
         # star
         star_circle = plt.Circle(
             (0, 0),
             self.star_radius/ c.r_sun,
-            color='yellow'
+            color=colors[self.stype.lower()]
         )
 
         # planet
