@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlanetSim Tutorials &mdash; planetsim 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="run_sim Functions" href="planetsim.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            planetsim
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="planetsim.html">run_sim Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PlanetSim Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Installation">1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Your-first-PlanetSim-simulation.">2. Your first PlanetSim simulation.</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">planetsim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PlanetSim Tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial.nblink.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="PlanetSim-Tutorials">
+<h1>PlanetSim Tutorials<a class="headerlink" href="#PlanetSim-Tutorials" title="Link to this heading"></a></h1>
+<p>PlanetSim is a package that let’s you visualize the orbital configuration of your transit light curve, with the goal of making transits more intuitive.</p>
+<section id="1.-Installation">
+<h2>1. Installation<a class="headerlink" href="#1.-Installation" title="Link to this heading"></a></h2>
+<p>We recommend creating a separate environment in your computer, with your environment manager of choice. In this example we will be using conda. This package requires python&lt;=3.11, as distutils was removed in python version 3.12.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create --name planetsim_env python=3.9
+</pre></div>
+</div>
+<p>Finally, we can now install PlanetSim!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple planetsim==0.0.1
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Your-first-PlanetSim-simulation.">
+<h2>2. Your first PlanetSim simulation.<a class="headerlink" href="#2.-Your-first-PlanetSim-simulation." title="Link to this heading"></a></h2>
+<p>This example will walk you through creating your first transit light curve visualization through one simple example, line by line.</p>
+<p>Begin by importing PlanetSim:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">planetsim</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_sim</span> <span class="k">as</span> <span class="n">pls</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> planetsim <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> run_sim <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> pls
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;planetsim&#39;
+</pre></div></div>
+</div>
+<p>The first thing we need to do is to create the Planet and Star objects. They store the orbital and physical information about the planet and the star that are being used in our simulation.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># defining the planet</span>
+<span class="n">planet1</span> <span class="o">=</span> <span class="n">pls</span><span class="o">.</span><span class="n">Planet</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.50</span><span class="p">,</span>        <span class="c1"># units of Jupiter Radii</span>
+                     <span class="n">orbital_period</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># units of days.</span>
+<span class="c1"># defining the star</span>
+<span class="n">star1</span> <span class="o">=</span> <span class="n">pls</span><span class="o">.</span><span class="n">Star</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>    <span class="c1">#  radius in units of Solar radii</span>
+                 <span class="n">mass</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>      <span class="c1">#  mass in units of Solar mass</span>
+                 <span class="n">stype</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>  <span class="c1">#  star&#39;s spectral type</span>
+</pre></div>
+</div>
+</div>
+<p>Now that the components of the system have been defined, we will create the Transit object. The Transit objects creates the light curve and the snapshots for the final animation.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transit1</span> <span class="o">=</span> <span class="n">pls</span><span class="o">.</span><span class="n">Transit</span><span class="p">(</span><span class="n">planet1</span><span class="p">,</span> <span class="n">star1</span><span class="p">)</span>  <span class="c1"># initializing the star system</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, we will use the Transit object to generate the visualization. First we we’ll create the light curve and then we will use the physical and orbital parameteres stored in the Planet and Star classes to build the simulation that will allow us to visualize the dynamics behind the curve.</p>
+<p>We recommend generating a snapshot of your system at t = 0 before creating the full animation. This serves as a sanity check to ensure that the system’s size and scale are consistent with your expectations. You can use the .make_snapshot() function to generate a static image of your system at any desired timestep.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transit1</span><span class="o">.</span><span class="n">make_lightcurve</span><span class="p">()</span>  <span class="c1"># generate the lightcurve</span>
+<span class="n">transit1</span><span class="o">.</span><span class="n">make_snapshot</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># create a snapshot of the system at time = 0</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_15_0.png" src="_images/tutorial_15_0.png" />
+</div>
+</div>
+<p>Finally, once you’vre checked the system looks okay you can use to generate the animation of the full transit. The animation will be stored as a .gif file in your working directory.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transit1</span><span class="o">.</span><span class="n">make_animation</span><span class="p">()</span>  <span class="c1"># generate animation of full transit</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Star fraction of plot: 0.04265841081279355
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;planet_transit.gif&#39;
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="planetsim.html" class="btn btn-neutral float-left" title="run_sim Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Evelyn Bruinsma, Dana Yaptangco, Helena Buschermohle.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
