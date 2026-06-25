@@ -41,7 +41,8 @@ class Star:
         
     Attributes:
         radius (float): star radius. It's passed in solar radii units but it's converted and stored in SI units. 
-        mass (float): star mass. It's passed in jupiter radii units but it's converted and stored in SI units. 
+        mass (float): star mass. It's passed in jupiter radii units but it's converted and stored in SI units.
+        stype (str): spectral type of star (OBAFGKM) 
     '''
 
     def __init__(self, radius, mass, stype):
