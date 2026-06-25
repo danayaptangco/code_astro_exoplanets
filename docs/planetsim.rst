@@ -5,5 +5,5 @@ run_sim Functions
 
 Functions to simulate an exoplanet transit.
 
-.. autoclass:: run_sim
+.. automodule:: run_sim
    :members:

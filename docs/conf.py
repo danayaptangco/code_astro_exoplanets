@@ -27,6 +27,12 @@ extensions = ['sphinx.ext.autodoc',
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+autodoc_default_options = {
+    'members': True,           # Documents the classes in the module
+    'inherited-members': True, # Documents methods inherited from parent classes
+    'show-inheritance': True,  # Shows what base class the class uses
+}
+
 
 
 # -- Options for HTML output -------------------------------------------------
