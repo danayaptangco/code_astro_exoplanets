@@ -8,7 +8,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../planetsim/'))
 
 project = 'planetsim'
 copyright = '2026, Evelyn Bruinsma, Dana Yaptangco, Helena Buschermohle'
