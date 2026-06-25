@@ -1,0 +1,4 @@
+numpy>=2.5.0 
+batman-package>=2.5.2
+matplotlib>=3.11.0
+ipython>=9.14.1
